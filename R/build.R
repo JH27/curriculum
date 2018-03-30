@@ -93,8 +93,9 @@ build_overview <- function() {
     select(name, needs) %>%
     filter(needs %>% map_lgl(~ !is_empty(.))) %>%
     unnest(needs)
+  leads_to <- needs %>% select(name = needs, leads_to = name)
 
-  needs_graph <- igraph::graph_from_data_frame(needs, vertices = units)
+  needs_graph <- igraph::graph_from_data_frame(leads_to, vertices = units)
   set.seed(1014)
 
   ggraph(needs_graph, layout = "nicely") +
