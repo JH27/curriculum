@@ -1,4 +1,7 @@
-- units: # week 1
+cur-week: 10
+
+weeks:
+  week-01:
   - setup
   - code-style
   - documentation
@@ -7,7 +10,7 @@
   - manip-basics
   - rmarkdown-basics
 
-- units: # week 2
+  week-02:
   - vis-basics-2
   - vis-labelling
   - manip-one-table
@@ -15,7 +18,7 @@
   - getting-help
   - vis-calls
 
-- units: # week 3
+  week-03:
   - data-structure-basics
   - parse-basics
   - relational-basics
@@ -23,7 +26,7 @@
   - spread-gather
   - vis-perception
 
-- units: # week 4
+  week-04:
   - datetime-basics
   - eda-1d
   - string-basics
@@ -31,7 +34,7 @@
   - vis-position
   - missing-values
 
-- units: # week 5
+  week-05:
   - function-basics
   - vis-scales-2
   - lists
@@ -39,7 +42,7 @@
   - factor-basics
   - model-basics
 
-- units: # week 6
+  week-06:
   - model-vis
   - regexps
   - filter-joins
@@ -47,13 +50,13 @@
   - parse-details
   - vis-themes
 
-- units: # week 7
+  week-07:
   - model-multivariate
   - list-cols
   - timespans
   - vector-summary-functions
 
-- units: # week 8
+  week-08:
   - model-many
   - separate-unite
   - spatial-basics
@@ -63,14 +66,14 @@
   - workflow-rmarkdown
   - vector-functions
 
-- units: # week 9
+  week-09:
   - tidy-eval
   - spatial-vis
   - window-functions
   - report-generation
   - export
 
-- units: # week 10
+  week-10:
   - rmarkdown-formats
   - ggplot2-exts
   - learning-more

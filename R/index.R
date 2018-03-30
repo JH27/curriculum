@@ -23,12 +23,10 @@ unit_row <- function(unit, title, updated, theme, week = "", n = 3) {
   ), collapse = "\n")
 }
 
-week_tbody <- function(week_num,
-                       unit_index = load_units(),
-                       syllabus_index = load_syllabus()) {
-  week <- syllabus_index[[week_num]]
+week_tbody <- function(week_num, weeks, unit_index = load_units()) {
+  week <- weeks[[week_num]]
 
-  units <- unit_index[week$units]
+  units <- unit_index[week]
   units_df <- tibble(
     unit = names(units),
     title = units %>% map_chr("title"),
@@ -42,12 +40,9 @@ week_tbody <- function(week_num,
 
 }
 
-theme_index <- function(syllabus_index = load_syllabus(),
-                        unit_index = load_units(),
-                        reverse = FALSE
-                        ) {
+theme_index <- function(weeks, unit_index = load_units(), reverse = FALSE) {
 
-  week <- seq_along(syllabus_index)
+  week <- seq_along(weeks)
   if (reverse) {
     week <- rev(week)
   }
@@ -56,7 +51,7 @@ theme_index <- function(syllabus_index = load_syllabus(),
     week,
     week_tbody,
     unit_index = unit_index,
-    syllabus_index = syllabus_index
+    weeks = weeks
   )
 
   theme_headers <- paste(glue('    <th>{themes}</th>'), collapse = "\n")

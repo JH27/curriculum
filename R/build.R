@@ -15,14 +15,17 @@ build_units <- function() {
   notes %>% walk(file.copy, to = here::here("docs"), recursive = TRUE)
 
   syllabus <- load_syllabus()
+  cur_week <- syllabus$`cur-week`
+  weeks <- syllabus$weeks
+
   units <- load_units()
   supplements <- load_supplements()
 
-  syllabus[1:cur_week] %>%
+  weeks[1:cur_week] %>%
     theme_index(units) %>%
     write_if_different(here::here("docs/index.md"))
 
-  syllabus %>%
+  weeks %>%
     theme_index(units) %>%
     write_if_different(here::here("docs/upcoming.md"))
 
@@ -57,17 +60,16 @@ build_storyboard <- function() {
     sprintf("[%s](https://dcl-2017-01.github.io/curriculum/%s.html)", x, x)
   }
 
-  unit_readings <- load_syllabus() %>%
-    map("units") %>%
+  syllabus <- load_syllabus()
+  unit_readings <- syllabus$weeks %>%
     enframe("week", "unit") %>%
-    mutate(week = sprintf("week%02d", week)) %>%
     unnest(unit) %>%
     left_join(readings, by = "unit") %>%
     group_by(week, book_id) %>%
     summarise(units = paste0(unit_link(unit), collapse = ", "))
 
   key_books %>%
-    expand(book_id, week = sprintf("week%02d", 1:10)) %>%
+    expand(book_id, week = sprintf("week-%02d", 1:10)) %>%
     left_join(unit_readings, by = c("book_id", "week")) %>%
     replace_na(list(units = "")) %>%
     left_join(key_books, by = "book_id") %>%
