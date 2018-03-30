@@ -12,6 +12,7 @@ Depends:
   yaml,
   tidyverse
 Imports:
+  cli,
   digest
 Suggests:
   rvest,

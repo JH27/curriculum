@@ -66,3 +66,7 @@ out_of_date <- function(src, dest) {
 
   mtime(src) > mtime(dest)
 }
+
+cat_line <- function(...) {
+  cat(paste0(..., "\n", collapse = ""))
+}

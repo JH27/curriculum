@@ -68,15 +68,20 @@ build_storyboard <- function() {
     group_by(week, book_id) %>%
     summarise(units = paste0(unit_link(unit), collapse = ", "))
 
-  key_books %>%
+  storyboard <- key_books %>%
     expand(book_id, week = sprintf("week-%02d", 1:10)) %>%
     left_join(unit_readings, by = c("book_id", "week")) %>%
     replace_na(list(units = "")) %>%
     left_join(key_books, by = "book_id") %>%
     select(book_id, title, everything()) %>%
     spread(week, units) %>%
-    knitr::kable() %>%
-    cat(file = here::here("storyboard.md"), sep = "\n")
+    knitr::kable()
+
+  write_if_different(
+    paste0(storyboard, collapse = "\n"),
+    here::here("storyboard.md"),
+    check = FALSE
+  )
 }
 
 
@@ -111,5 +116,6 @@ build_overview <- function() {
     theme_void() +
     scale_fill_brewer(palette = "Set2")
 
+  writing("overview.png")
   ggsave(here::here("overview.png"), width = 12, height = 8, dpi = 96)
 }

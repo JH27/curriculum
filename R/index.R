@@ -1,3 +1,5 @@
+themes <- c("Explore", "Wrangle", "Program", "Model", "Communicate", "Workflow")
+
 unit_row <- function(unit, title, updated, theme, week = "", n = 3) {
   ncol <- length(themes) + n
   start_col <- match(theme, tolower(themes))

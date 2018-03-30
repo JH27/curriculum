@@ -1,15 +1,17 @@
 #!/usr/local/bin/Rscript
-devtools::load_all(here::here())
+suppressWarnings(suppressPackageStartupMessages(
+  devtools::load_all(here::here(), quiet = TRUE)
+))
 
-themes <- c("Explore", "Wrangle", "Program", "Model", "Communicate", "Workflow")
+cat_line(cli::rule("Building site", line = 2))
 
-message("Building units ----------------------------------")
+cat_line(cli::rule("Building units"))
 build_units()
 
-message("Building storyboard -----------------------------")
+cat_line(cli::rule("Building storyboard"))
 build_storyboard()
 
-message("Building overview graph -------------------------")
+cat_line(cli::rule("Building overview graph"))
 build_overview()
 
-message("DONE ============================================")
+cat_line(cli::rule("Done", line = 2))
