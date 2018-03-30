@@ -25,8 +25,8 @@ unit_row <- function(unit, title, updated, theme, week = "", n = 3) {
 
 week_tbody <- function(week_num, weeks, unit_index = load_units()) {
   week <- weeks[[week_num]]
+  units <- lookup_units(week, unit_index)
 
-  units <- unit_index[week]
   units_df <- tibble(
     unit = names(units),
     title = units %>% map_chr("title"),

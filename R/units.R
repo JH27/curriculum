@@ -1,3 +1,16 @@
+lookup_units <- function(units, unit_index) {
+  unknown <- setdiff(units, names(unit_index))
+  if (length(unknown) > 0) {
+    warning(
+      "Skipping unknown units: ", paste0("'", unknown, "'", collapse = ", "),
+      call. = FALSE,
+      immediate. = TRUE
+    )
+  }
+
+  unit_index[intersect(units, names(unit_index))]
+}
+
 
 md_unit <- function(unit, unit_name, unit_index, supp_index) {
   paste0(
@@ -35,7 +48,7 @@ md_needs <- function(units, unit_index) {
   if (length(units) == 0)
     return()
 
-  titles <- unit_index[units] %>% map_chr("title") %>% unname()
+  titles <- lookup_units(units, unit_index) %>% map_chr("title") %>% unname()
   links <- paste0("[", titles, "](", units, ".md)", collapse = ", ")
 
   paste0("<small>(Builds on: ", links, ")</small>")
