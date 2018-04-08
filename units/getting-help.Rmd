@@ -18,14 +18,13 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 
 *   If you encounter an error message you don't understand, strip anything
     highly specific (like your object or variable names), surround it with
-    quotes and __google__ it!
+    quotes and __Google__ it!
     
     (If the error message isn't in English, run `Sys.setenv(LANGUAGE = "en")` 
     and re-run the code; you're more likely to find help for English error 
     messages.)
-
-*   Search [stackoverflow](http://stackoverflow.com) and include the `[r]` tag. 
-    Or the `[ggplot2]` tag. Or the `[dplyr]` tag. You get the idea.
+    
+*   Search the [tidyverse community](https://community.rstudio.com/c/tidyverse). If you can't find an answer, you can pose a question using a __reprex__ as explained below.
 
 ## Get help from others
 

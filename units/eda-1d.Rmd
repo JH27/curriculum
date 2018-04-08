@@ -36,8 +36,8 @@ It has two convenient arguments:
     flights %>% count(dest, sort = TRUE)
     ```
 
-*  `wt = my_variable` switches from a count to a weight sum of `my_variable`.
-   For example, the following code gives the total amount distance traveled by
+*  `wt = my_variable` switches from a count to a weighted sum of `my_variable`.
+   For example, the following code gives the total distance traveled by
    each carrier. It is particularly useful if you have data that has already 
    been aggregated.
 

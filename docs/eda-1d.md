@@ -9,22 +9,16 @@ title: Exploratory data analysis (1D)
 <small>(Leads to: [Exploratory data analysis (2D)](eda-2d.md), [Function basics](function-basics.md), [Essentials of relational data](relational-basics.md), [String basics](string-basics.md), [Tidy data](tidy-data.md))</small>
 
 
-Exploratory data analysis is partly a set of techniques, but is mostly a
-mindset: you want to remain open to what the data is telling you.
+Exploratory data analysis is partly a set of techniques, but is mostly a mindset: you want to remain open to what the data is telling you.
 
 ``` r
 library(tidyverse)
 library(nycflights13)
 ```
 
-Whenever you start working with a new variable, it’s a really good idea
-to first take a look at the variable by itself, before you start
-combining it with other variables. As well as the visual techniques
-you’ll learn in the readings, another quick and dirty function is
-`count()`.
+Whenever you start working with a new variable, it's a really good idea to first take a look at the variable by itself, before you start combining it with other variables. As well as the visual techniques you'll learn in the readings, another quick and dirty function is `count()`.
 
-`df %>% count(grp)` is shorthand for `df %>% group_by(grp) %>%
-summarise(n = n())`.
+`df %>% count(grp)` is shorthand for `df %>% group_by(grp) %>% summarise(n = n())`.
 
 ``` r
 flights %>% count(carrier)
@@ -51,9 +45,8 @@ flights %>% count(carrier)
 
 It has two convenient arguments:
 
-  - `sort = TRUE` automatically arranges the result so the most common
-    values are at the top
-    
+-   `sort = TRUE` automatically arranges the result so the most common values are at the top
+
     ``` r
     flights %>% count(dest, sort = TRUE)
     #> # A tibble: 105 x 2
@@ -72,44 +65,40 @@ It has two convenient arguments:
     #> # ... with 95 more rows
     ```
 
-  - `wt = my_variable` switches from a count to a weight sum of
-    `my_variable`. For example, the following code gives the total
-    amount distance traveled by each carrier. It is particularly useful
-    if you have data that has already been aggregated.
-    
+-   `wt = my_variable` switches from a count to a weighted sum of `my_variable`. For example, the following code gives the total distance traveled by each carrier. It is particularly useful if you have data that has already been aggregated.
+
     ``` r
     flights %>% count(carrier, wt = distance)
     #> # A tibble: 16 x 2
-    #>    carrier        n
-    #>    <chr>      <dbl>
-    #>  1 9E       9788152
-    #>  2 AA      43864584
-    #>  3 AS       1715028
-    #>  4 B6      58384137
-    #>  5 DL      59507317
-    #>  6 EV      30498951
-    #>  7 F9       1109700
-    #>  8 FL       2167344
-    #>  9 HA       1704186
-    #> 10 MQ      15033955
-    #> 11 OO         16026
-    #> 12 UA      89705524
-    #> 13 US      11365778
-    #> 14 VX      12902327
-    #> 15 WN      12229203
-    #> 16 YV        225395
+    #>    carrier         n
+    #>    <chr>       <dbl>
+    #>  1 9E       9788152.
+    #>  2 AA      43864584.
+    #>  3 AS       1715028.
+    #>  4 B6      58384137.
+    #>  5 DL      59507317.
+    #>  6 EV      30498951.
+    #>  7 F9       1109700.
+    #>  8 FL       2167344.
+    #>  9 HA       1704186.
+    #> 10 MQ      15033955.
+    #> 11 OO         16026.
+    #> 12 UA      89705524.
+    #> 13 US      11365778.
+    #> 14 VX      12902327.
+    #> 15 WN      12229203.
+    #> 16 YV        225395.
     ```
 
-You can also `count()` the value of expression. This is a useful
-technique to get a quick count of how many missing values there are:
+You can also `count()` the value of expression. This is a useful technique to get a quick count of how many missing values there are:
 
 ``` r
 flights %>% count(is.na(dep_delay))
 #> # A tibble: 2 x 2
 #>   `is.na(dep_delay)`      n
 #>   <lgl>               <int>
-#> 1 F                  328521
-#> 2 T                    8255
+#> 1 FALSE              328521
+#> 2 TRUE                 8255
 
 flights %>% count(
   dep_missing = is.na(dep_time), 
@@ -118,20 +107,19 @@ flights %>% count(
 #> # A tibble: 3 x 3
 #>   dep_missing arr_missing      n
 #>   <lgl>       <lgl>        <int>
-#> 1 F           F           328063
-#> 2 F           T              458
-#> 3 T           T             8255
+#> 1 FALSE       FALSE       328063
+#> 2 FALSE       TRUE           458
+#> 3 TRUE        TRUE          8255
 ```
 
-You can combine `count()` with the `cut_*` functions from ggplot2 to
-compute histograms “by hand”:
+You can combine `count()` with the `cut_*` functions from ggplot2 to compute histograms "by hand":
 
 ``` r
 # five bins of equal widths
 flights %>% count(cut_interval(arr_delay, 5))
 #> # A tibble: 6 x 2
 #>   `cut_interval(arr_delay, 5)`      n
-#>   <fctr>                        <int>
+#>   <fct>                         <int>
 #> 1 [-86,186]                    323807
 #> 2 (186,457]                      3465
 #> 3 (457,729]                        45
@@ -143,7 +131,7 @@ flights %>% count(cut_interval(arr_delay, 5))
 flights %>% count(cut_number(arr_delay, 5))
 #> # A tibble: 6 x 2
 #>   `cut_number(arr_delay, 5)`     n
-#>   <fctr>                     <int>
+#>   <fct>                      <int>
 #> 1 [-86,-19]                  70875
 #> 2 (-19,-10]                  61570
 #> 3 (-10,1]                    66972
@@ -155,7 +143,7 @@ flights %>% count(cut_number(arr_delay, 5))
 flights %>% count(cut_width(arr_delay, 60, boundary = 0))
 #> # A tibble: 22 x 2
 #>    `cut_width(arr_delay, 60, boundary = 0)`      n
-#>    <fctr>                                    <int>
+#>    <fct>                                     <int>
 #>  1 [-120,-60]                                  240
 #>  2 (-60,0]                                  194102
 #>  3 (0,60]                                   105215
