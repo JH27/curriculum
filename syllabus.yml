@@ -1,4 +1,4 @@
-cur-week: 1
+cur-week: 2
 
 weeks:
   week-01:
@@ -13,13 +13,14 @@ weeks:
   week-02:
   - vis-basics-2
   - vis-labelling
+  - data-structure-basics
   - manip-one-table
-  - tidy-data
+  - eda-1d
   - getting-help
+  - tidy-data
   - vis-calls
 
   week-03:
-  - data-structure-basics
   - parse-basics
   - relational-basics
   - vis-scales
@@ -28,7 +29,6 @@ weeks:
 
   week-04:
   - datetime-basics
-  - eda-1d
   - string-basics
   - purrr-map
   - vis-position
