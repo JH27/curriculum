@@ -1,4 +1,4 @@
-cur-week: 2
+cur-week: 3
 
 weeks:
   week-01:
@@ -22,8 +22,9 @@ weeks:
 
   week-03:
   - parse-basics
-  - relational-basics
+  - function-basics
   - vis-scales
+  - relational-basics
   - spread-gather
   - vis-perception
 
@@ -35,7 +36,6 @@ weeks:
   - missing-values
 
   week-05:
-  - function-basics
   - vis-scales-2
   - lists
   - manip-scoped
