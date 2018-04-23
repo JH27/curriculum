@@ -1,4 +1,4 @@
-cur-week: 3
+cur-week: 4
 
 weeks:
   week-01:
@@ -29,11 +29,12 @@ weeks:
   - vis-perception
 
   week-04:
-  - datetime-basics
   - string-basics
   - purrr-map
   - vis-position
   - missing-values
+  - datetime-basics
+  - eda-2d
 
   week-05:
   - vis-scales-2
@@ -46,7 +47,6 @@ weeks:
   - model-vis
   - regexps
   - filter-joins
-  - eda-2d
   - parse-details
   - vis-themes
 
