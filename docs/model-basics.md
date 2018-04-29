@@ -1,10 +1,10 @@
 ---
-title: Model intuition
+title: Model basics
 ---
 
 <!-- Generated automatically from model-basics.yml. Do not edit by hand -->
 
-# Model intuition <small class='model'>[model]</small>
+# Model basics <small class='model'>[model]</small>
 <small>(Builds on: [Setup](setup.md))</small>  
 <small>(Leads to: [Many models](model-many.md), [Visualising models](model-vis.md))</small>
 

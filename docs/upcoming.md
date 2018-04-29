@@ -190,18 +190,6 @@ title: Theme index
 <tbody>
 <tr>
 <td id='week-5'>5</td>
-  <td colspan="4"></td>
-  <td colspan="4"><a class="communicate" href="vis-scales-2.html">Advanced scales</a></td>
-  <td colspan="1"></td>
-</tr>
-<tr>
-<td></td>
-  <td colspan="2"></td>
-  <td colspan="4"><a class="program" href="lists.html">Lists</a></td>
-  <td colspan="3"></td>
-</tr>
-<tr>
-<td></td>
   <td colspan="1"></td>
   <td colspan="4"><a class="wrangle" href="manip-scoped.html">Scoped verbs</a></td>
   <td colspan="4"></td>
@@ -214,8 +202,20 @@ title: Theme index
 </tr>
 <tr>
 <td></td>
+  <td colspan="4"></td>
+  <td colspan="4"><a class="communicate" href="vis-scales-2.html">Advanced scales</a></td>
+  <td colspan="1"></td>
+</tr>
+<tr>
+<td></td>
+  <td colspan="2"></td>
+  <td colspan="4"><a class="program" href="lists.html">Lists</a></td>
   <td colspan="3"></td>
-  <td colspan="4"><a class="model" href="model-basics.html">Model intuition</a></td>
+</tr>
+<tr>
+<td></td>
+  <td colspan="3"></td>
+  <td colspan="4"><a class="model" href="model-basics.html">Model basics</a></td>
   <td colspan="2"></td>
 </tr>
 </tbody>

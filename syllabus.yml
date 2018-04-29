@@ -37,10 +37,10 @@ weeks:
   - eda-2d
 
   week-05:
-  - vis-scales-2
-  - lists
   - manip-scoped
   - factor-basics
+  - vis-scales-2
+  - lists
   - model-basics
 
   week-06:
