@@ -1,10 +1,10 @@
 ---
-title: Visualising models
+title: Fitting and visualizing models
 ---
 
 <!-- Generated automatically from model-vis.yml. Do not edit by hand -->
 
-# Visualising models <small class='model'>[model]</small>
+# Fitting and visualizing models <small class='model'>[model]</small>
 <small>(Builds on: [Exploratory data analysis (2D)](eda-2d.md), [Model basics](model-basics.md))</small>  
 <small>(Leads to: [Models with multiple variables](model-multivariate.md))</small>
 
@@ -26,5 +26,7 @@ statistics and machine learning.
 ## Readings
 
   * [Visualising models](http://r4ds.had.co.nz/model-basics.html#visualising-models) [r4ds-23.3]
+
+  * [Formulas and model families](http://r4ds.had.co.nz/model-basics.html#formulas-and-model-families) [r4ds-23.4]
 
 

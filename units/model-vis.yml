@@ -1,4 +1,4 @@
-title: Visualising models
+title: Fitting and visualizing models
 theme: model
 
 desc: |
@@ -21,3 +21,4 @@ needs: [eda-2d, model-basics]
 
 readings:
 - book: r4ds-23.3
+- book: r4ds-23.4

@@ -223,7 +223,7 @@ title: Theme index
 <tr>
 <td id='week-6'>6</td>
   <td colspan="3"></td>
-  <td colspan="4"><a class="model" href="model-vis.html">Visualising models</a></td>
+  <td colspan="4"><a class="model" href="model-vis.html">Fitting and visualizing models</a></td>
   <td colspan="2"></td>
 </tr>
 <tr>
