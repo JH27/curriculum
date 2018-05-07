@@ -44,11 +44,12 @@ weeks:
   - model-basics
 
   week-06:
-  - model-vis
   - regexps
-  - filter-joins
-  - parse-details
+  - spatial-basics
+  - vector-functions
   - vis-themes
+  - model-vis
+  - parse-details
 
   week-07:
   - model-multivariate
@@ -59,12 +60,12 @@ weeks:
   week-08:
   - model-many
   - separate-unite
-  - spatial-basics
+
   - purrr-map-variants
   - dplyr-databases
   - vis-annotation
   - workflow-rmarkdown
-  - vector-functions
+
 
   week-09:
   - tidy-eval
@@ -80,6 +81,7 @@ weeks:
 
 # Not used
 # - rectangling
+# - filter-joins
 # - reprexes # included in getting-help
 # Next
 # - analysis-workflow

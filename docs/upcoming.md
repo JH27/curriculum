@@ -222,12 +222,6 @@ title: Theme index
 <tbody>
 <tr>
 <td id='week-6'>6</td>
-  <td colspan="3"></td>
-  <td colspan="4"><a class="model" href="model-vis.html">Fitting and visualizing models</a></td>
-  <td colspan="2"></td>
-</tr>
-<tr>
-<td></td>
   <td colspan="1"></td>
   <td colspan="4"><a class="wrangle" href="regexps.html">Regular expressions</a></td>
   <td colspan="4"></td>
@@ -235,13 +229,13 @@ title: Theme index
 <tr>
 <td></td>
   <td colspan="1"></td>
-  <td colspan="4"><a class="wrangle" href="filter-joins.html">Semi- and anti-joins</a></td>
+  <td colspan="4"><a class="wrangle" href="spatial-basics.html">Spatial basics</a></td>
   <td colspan="4"></td>
 </tr>
 <tr>
 <td></td>
   <td colspan="1"></td>
-  <td colspan="4"><a class="wrangle" href="parse-details.html">Parsing details</a></td>
+  <td colspan="4"><a class="wrangle" href="vector-functions.html">Vector functions</a></td>
   <td colspan="4"></td>
 </tr>
 <tr>
@@ -249,6 +243,18 @@ title: Theme index
   <td colspan="4"></td>
   <td colspan="4"><a class="communicate" href="vis-themes.html">ggplot2 themes</a></td>
   <td colspan="1"></td>
+</tr>
+<tr>
+<td></td>
+  <td colspan="3"></td>
+  <td colspan="4"><a class="model" href="model-vis.html">Fitting and visualizing models</a></td>
+  <td colspan="2"></td>
+</tr>
+<tr>
+<td></td>
+  <td colspan="1"></td>
+  <td colspan="4"><a class="wrangle" href="parse-details.html">Parsing details</a></td>
+  <td colspan="4"></td>
 </tr>
 </tbody>
 <tbody>
@@ -293,12 +299,6 @@ title: Theme index
 <tr>
 <td></td>
   <td colspan="1"></td>
-  <td colspan="4"><a class="wrangle" href="spatial-basics.html">Spatial basics</a></td>
-  <td colspan="4"></td>
-</tr>
-<tr>
-<td></td>
-  <td colspan="1"></td>
   <td colspan="4"><a class="wrangle" href="purrr-map-variants.html">Map variants</a></td>
   <td colspan="4"></td>
 </tr>
@@ -318,12 +318,6 @@ title: Theme index
 <td></td>
   <td colspan="5"></td>
   <td colspan="4"><a class="workflow" href="workflow-rmarkdown.html">R Markdown</a></td>
-</tr>
-<tr>
-<td></td>
-  <td colspan="1"></td>
-  <td colspan="4"><a class="wrangle" href="vector-functions.html">Vector functions</a></td>
-  <td colspan="4"></td>
 </tr>
 </tbody>
 <tbody>
