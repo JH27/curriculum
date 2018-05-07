@@ -4,7 +4,7 @@ title: Vector functions
 
 <!-- Generated automatically from vector-functions.yml. Do not edit by hand -->
 
-# Vector functions <small class='wrangle'>[wrangle]</small>
+# Vector functions <small class='program'>[program]</small>
 <small>(Builds on: [Manipulation basics](manip-basics.md))</small>
 
 

@@ -1,7 +1,7 @@
 ---
 unit_title: Vector functions
 needs: [manip-basics]
-theme: wrangle
+theme: program
 ---
 
 ```{r setup, include = FALSE}

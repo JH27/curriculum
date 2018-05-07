@@ -234,9 +234,9 @@ title: Theme index
 </tr>
 <tr>
 <td></td>
-  <td colspan="1"></td>
-  <td colspan="4"><a class="wrangle" href="vector-functions.html">Vector functions</a></td>
-  <td colspan="4"></td>
+  <td colspan="2"></td>
+  <td colspan="4"><a class="program" href="vector-functions.html">Vector functions</a></td>
+  <td colspan="3"></td>
 </tr>
 <tr>
 <td></td>
