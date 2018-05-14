@@ -6,7 +6,7 @@ title: Iteration basics
 
 # Iteration basics <small class='program'>[program]</small>
 <small>(Builds on: [Data structure basics](data-structure-basics.md))</small>  
-<small>(Leads to: [Map variants](purrr-map-variants.md))</small>
+<small>(Leads to: [Purrr map variants](purrr-map-variants.md))</small>
 
 
 ## Introduction

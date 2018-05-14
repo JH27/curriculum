@@ -1,10 +1,10 @@
 ---
-title: Map variants
+title: Purrr map variants
 ---
 
 <!-- Generated automatically from purrr-map-variants.yml. Do not edit by hand -->
 
-# Map variants <small class='wrangle'>[wrangle]</small>
+# Purrr map variants <small class='wrangle'>[wrangle]</small>
 <small>(Builds on: [Iteration basics](purrr-map.md))</small>  
 <small>(Leads to: [List columns](list-cols.md))</small>
 

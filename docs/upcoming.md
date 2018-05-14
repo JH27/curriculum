@@ -284,7 +284,7 @@ title: Theme index
 <tr>
 <td></td>
   <td colspan="1"></td>
-  <td colspan="4"><a class="wrangle" href="purrr-map-variants.html">Map variants</a></td>
+  <td colspan="4"><a class="wrangle" href="purrr-map-variants.html">Purrr map variants</a></td>
   <td colspan="4"></td>
 </tr>
 </tbody>
