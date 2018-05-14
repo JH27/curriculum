@@ -1,10 +1,10 @@
 ---
-title: R Markdown
+title: R Markdown workflow
 ---
 
 <!-- Generated automatically from workflow-rmarkdown.yml. Do not edit by hand -->
 
-# R Markdown <small class='workflow'>[workflow]</small>
+# R Markdown workflow <small class='workflow'>[workflow]</small>
 <small>(Builds on: [Setup](setup.md))</small>
 
 As you start to write more code, it's a good idea to be a little thoughtful

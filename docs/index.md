@@ -257,4 +257,35 @@ title: Theme index
   <td colspan="4"></td>
 </tr>
 </tbody>
+<tbody>
+<tr>
+<td id='week-7'>7</td>
+  <td colspan="1"></td>
+  <td colspan="4"><a class="wrangle" href="timespans.html">Time spans</a></td>
+  <td colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+  <td colspan="4"></td>
+  <td colspan="4"><a class="communicate" href="vis-annotation.html">Annotations</a></td>
+  <td colspan="1"></td>
+</tr>
+<tr>
+<td></td>
+  <td colspan="5"></td>
+  <td colspan="4"><a class="workflow" href="workflow-rmarkdown.html">R Markdown workflow</a></td>
+</tr>
+<tr>
+<td></td>
+  <td colspan="3"></td>
+  <td colspan="4"><a class="model" href="model-multivariate.html">Models with multiple variables</a></td>
+  <td colspan="2"></td>
+</tr>
+<tr>
+<td></td>
+  <td colspan="1"></td>
+  <td colspan="4"><a class="wrangle" href="purrr-map-variants.html">Map variants</a></td>
+  <td colspan="4"></td>
+</tr>
+</tbody>
 </table>

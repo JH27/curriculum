@@ -1,4 +1,4 @@
-cur-week: 6
+cur-week: 7
 
 weeks:
   week-01:
@@ -52,20 +52,18 @@ weeks:
   - parse-details
 
   week-07:
-  - model-multivariate
-  - list-cols
   - timespans
-  - vector-summary-functions
+  - vis-annotation
+  - workflow-rmarkdown
+  - model-multivariate
+  - purrr-map-variants
 
   week-08:
   - model-many
   - separate-unite
-
-  - purrr-map-variants
   - dplyr-databases
-  - vis-annotation
-  - workflow-rmarkdown
-
+  - list-cols
+  - vector-summary-functions
 
   week-09:
   - tidy-eval
