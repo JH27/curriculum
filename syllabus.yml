@@ -1,4 +1,4 @@
-cur-week: 7
+cur-week: 8
 
 weeks:
   week-01:
@@ -59,25 +59,26 @@ weeks:
   - purrr-map-variants
 
   week-08:
+  - list-cols
   - model-many
   - separate-unite
-  - dplyr-databases
-  - list-cols
-  - vector-summary-functions
+  - spatial-vis
+  - string-basics
 
   week-09:
   - tidy-eval
-  - spatial-vis
   - window-functions
   - report-generation
-  - export
 
   week-10:
+  - dplyr-databases
   - rmarkdown-formats
   - ggplot2-exts
   - learning-more
 
 # Not used
+# - export
+# - vector-summary-functions
 # - rectangling
 # - filter-joins
 # - reprexes # included in getting-help
