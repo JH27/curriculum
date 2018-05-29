@@ -319,4 +319,30 @@ title: Theme index
   <td colspan="4"></td>
 </tr>
 </tbody>
+<tbody>
+<tr>
+<td id='week-9'>9</td>
+  <td colspan="2"></td>
+  <td colspan="4"><a class="program" href="tidy-eval.html">Tidy evaluation</a></td>
+  <td colspan="3"></td>
+</tr>
+<tr>
+<td></td>
+  <td colspan="1"></td>
+  <td colspan="4"><a class="wrangle" href="window-functions.html">Window functions</a></td>
+  <td colspan="4"></td>
+</tr>
+<tr>
+<td></td>
+  <td colspan="3"></td>
+  <td colspan="4"><a class="model" href="model-eval.html">Model evaluation</a></td>
+  <td colspan="2"></td>
+</tr>
+<tr>
+<td></td>
+  <td colspan="1"></td>
+  <td colspan="4"><a class="wrangle" href="rectangling.html">Data rectangling</a></td>
+  <td colspan="4"></td>
+</tr>
+</tbody>
 </table>

@@ -1,4 +1,4 @@
-cur-week: 8
+cur-week: 9
 
 weeks:
   week-01:
@@ -68,7 +68,8 @@ weeks:
   week-09:
   - tidy-eval
   - window-functions
-  - report-generation
+  - model-eval
+  - rectangling
 
   week-10:
   - dplyr-databases
@@ -79,7 +80,7 @@ weeks:
 # Not used
 # - export
 # - vector-summary-functions
-# - rectangling
+# - report-generation
 # - filter-joins
 # - reprexes # included in getting-help
 # Next

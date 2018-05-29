@@ -334,9 +334,15 @@ title: Theme index
 </tr>
 <tr>
 <td></td>
-  <td colspan="4"></td>
-  <td colspan="4"><a class="communicate" href="report-generation.html">Generating multiple reports</a></td>
+  <td colspan="3"></td>
+  <td colspan="4"><a class="model" href="model-eval.html">Model evaluation</a></td>
+  <td colspan="2"></td>
+</tr>
+<tr>
+<td></td>
   <td colspan="1"></td>
+  <td colspan="4"><a class="wrangle" href="rectangling.html">Data rectangling</a></td>
+  <td colspan="4"></td>
 </tr>
 </tbody>
 <tbody>
