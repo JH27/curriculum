@@ -4,27 +4,20 @@ needs: parse-basics
 readings: ~
 updated: ~
 desc: "\nUse the googlesheets package by Jenny Bryan to (suprise!) extract data from
-  Google Sheets. Google Sheets is a surprisingly useful way of collaboratively collecting
+  Google sheets. Google sheets is a surprisingly useful way of collaboratively collecting
   data (especially with Google forms). googlesheets makes it easy to get that data
   into R and make use of it.\n\nIf you haven't already, install it:\n\n``` r\ninstall.packages(\"googlesheets\")\n```\n\n```
-  r\n# Libraries\nlibrary(tidyverse)\n```\n\n    ## ── Attaching packages ────────────
-  tidyverse 1.2.1 ──\n\n    ## ✔ ggplot2 2.2.1.9000     ✔ purrr   0.2.4     \n    ##
-  ✔ tibble  1.4.2          ✔ dplyr   0.7.4     \n    ## ✔ tidyr   0.8.0          ✔
-  stringr 1.3.1     \n    ## ✔ readr   1.1.1          ✔ forcats 0.3.0\n\n    ## ──
-  Conflicts ─────────────── tidyverse_conflicts() ──\n    ## ✖ dplyr::filter() masks
-  stats::filter()\n    ## ✖ dplyr::lag()    masks stats::lag()\n    ## ✖ dplyr::vars()
-  \  masks ggplot2::vars()\n\n``` r\nlibrary(googlesheets)\n\n# Parameters\n  # URL
+  r\n# Libraries\nlibrary(tidyverse)\nlibrary(googlesheets)\n\n# Parameters\n  # URL
   for Gapminder example\nurl_gapminder <- \"https://docs.google.com/spreadsheets/d/1BzfL0kZUz1TsI5zxJF1WNF01IxvC67FbOJUiiGMZ_mQ/\"\n```\n\nPublic
-  sheets\n-------------\n\nSome Google Sheets are public, anyone can read them. Take
-  a lot at this [example](https://docs.google.com/spreadsheets/d/1BzfL0kZUz1TsI5zxJF1WNF01IxvC67FbOJUiiGMZ_mQ/)
-  of data from [Gapminder](https://www.gapminder.org/).\n\nEach Google Sheet has a
-  sheet key. This key is needed by googlesheets to work with the Google Sheet. Here's
-  how to get the sheet key from a sheet's URL.\n\n``` r\nsheet_key <- extract_key_from_url(url_gapminder)\n\nsheet_key\n```\n\n
+  sheets\n-------------\n\nSome Google sheets are public, anyone can read them. Take
+  a look at this [example](https://docs.google.com/spreadsheets/d/1BzfL0kZUz1TsI5zxJF1WNF01IxvC67FbOJUiiGMZ_mQ/)
+  of data from [Gapminder](https://www.gapminder.org/).\n\nEach Google sheet has a
+  sheet key, which is needed by googlesheets. Here's how to get the sheet key from
+  a sheet's URL.\n\n``` r\nsheet_key <- extract_key_from_url(url_gapminder)\n\nsheet_key\n```\n\n
   \   ## [1] \"1BzfL0kZUz1TsI5zxJF1WNF01IxvC67FbOJUiiGMZ_mQ\"\n\nOnce you have the
-  sheet key, you can use it to create a googlesheets object.\n\n``` r\ngs <- gs_key(sheet_key)\n```\n\n
-  \   ## Worksheets feed constructed with public visibility\n\n``` r\nclass(gs)\n```\n\n
+  sheet key, you can use it to create a googlesheets object.\n\n``` r\ngs <- gs_key(sheet_key)\n\nclass(gs)\n```\n\n
   \   ## [1] \"googlesheet\" \"list\"\n\nHere's how you can list the worksheets in
-  the Google Sheet.\n\n``` r\ngs_ws_ls(gs)\n```\n\n    ## [1] \"Africa\"   \"Americas\"
+  the Google sheet.\n\n``` r\ngs_ws_ls(gs)\n```\n\n    ## [1] \"Africa\"   \"Americas\"
   \"Asia\"     \"Europe\"   \"Oceania\"\n\nHere's how you can read in the Asia worksheet.\n\n```
   r\nasia <- \n  gs %>% \n  gs_read(ws = \"Asia\")\n```\n\n    ## Accessing worksheet
   titled 'Asia'.\n\n    ## Parsed with column specification:\n    ## cols(\n    ##
@@ -51,13 +44,13 @@ desc: "\nUse the googlesheets package by Jenny Bryan to (suprise!) extract data 
   log into Google in the future. The reason you don't upload this to GitHub is that
   if someone were able to obtain this file, they could use it to access you Google
   files.\n\nA common problem in using googlesheets is that it cannot find the `.httr-oauth`
-  file. If you are using a project your working directory is often the top level of
-  the project, not the current subfolder. One way to avoid the problem is to simply
-  make a copy of `.httr-oauth` to have one at both the top level and the subfolder.\n\nOnce
-  you are authenticated into Google, your next challenge is to find the sheet key
-  for the Google Sheet you are interested in using. You can use the following so see
-  the sheets you have access to. The list is ordered by when the sheets were most
-  recently modified.\n\n``` r\ngs_ls() %>% View()\n```\n\nOnce you find the sheet,
-  you can copy it can create a variable for the key to place in the parameter section
-  of your code.\n\nFinally, you can read in the code using\n\n``` r\ndf <- \n  gs_key(sheet_key)
-  %>%\n  gs_read()\n```\n"
+  file. If you are using an RStudio project, your working directory is often the top
+  level of the project, not the current subfolder. One way to avoid this problem is
+  to simply make a copy of `.httr-oauth` to have one at both the top level of the
+  project and the subfolder.\n\nOnce you are authenticated into Google, your next
+  challenge is to find the sheet key for the Google Sheet you are interested in using.
+  You can use the following so see the sheets you have access to. The list is ordered
+  by when the sheets have been most recently modified.\n\n``` r\ngs_ls() %>% View()\n```\n\nOnce
+  you find the sheet, you can copy it can create a variable for the key to place in
+  the parameter section of your code.\n\nFinally, you can read in the sheet using\n\n```
+  r\ndf <- \n  gs_key(sheet_key) %>%\n  gs_read()\n```\n"
