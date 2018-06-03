@@ -48,7 +48,7 @@ desc: "\nUse the googlesheets package by Jenny Bryan to (suprise!) extract data 
   level of the project, not the current subfolder. One way to avoid this problem is
   to simply make a copy of `.httr-oauth` to have one at both the top level of the
   project and the subfolder.\n\nOnce you are authenticated into Google, your next
-  challenge is to find the sheet key for the Google Sheet you are interested in using.
+  challenge is to find the sheet key for the Google sheet you are interested in using.
   You can use the following so see the sheets you have access to. The list is ordered
   by modification time, with the most recently modified sheets first.\n\n``` r\ngs_ls()
   %>% View()\n```\n\nOnce you find the sheet you are interested in, you can copy its

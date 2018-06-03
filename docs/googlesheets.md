@@ -114,7 +114,7 @@ The `.httr-oauth` file allows you to avoid having to log into Google in the futu
 
 A common problem in using googlesheets is that it cannot find the `.httr-oauth` file. If you are using an RStudio project, your working directory is often the top level of the project, not the current subfolder. One way to avoid this problem is to simply make a copy of `.httr-oauth` to have one at both the top level of the project and the subfolder.
 
-Once you are authenticated into Google, your next challenge is to find the sheet key for the Google Sheet you are interested in using. You can use the following so see the sheets you have access to. The list is ordered by modification time, with the most recently modified sheets first.
+Once you are authenticated into Google, your next challenge is to find the sheet key for the Google sheet you are interested in using. You can use the following so see the sheets you have access to. The list is ordered by modification time, with the most recently modified sheets first.
 
 ``` r
 gs_ls() %>% View()
