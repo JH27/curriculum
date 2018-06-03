@@ -37,7 +37,7 @@ desc: "\nUse the googlesheets package by Jenny Bryan to (suprise!) extract data 
   more rows\n\nPrivate sheets\n--------------\n\nAccessing private sheets requires
   you to authenticate to Google. Authentication is done with this command.\n\n```
   r\n# Give googlesheets permission to access spreadsheet\ngs_auth()\n```\n\nYou will
-  be prompted to log into Google. Once you have done this googlesheets will create
+  be prompted to log into Google. Once you have done this, googlesheets will create
   a file called `.httr-oauth` in your current directory. **NEVER CHECK THIS INTO GIT
   OR UPLOAD IT TO GITHUB**. (In the RStudio Git pane, right-click on it and select
   ignore, then press OK.)\n\nThe `.httr-oauth` file allows you to avoid having to
