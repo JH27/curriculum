@@ -1,4 +1,4 @@
-cur-week: 9
+cur-week: 10
 
 weeks:
   week-01:
@@ -72,9 +72,10 @@ weeks:
   - rectangling
 
   week-10:
-  - dplyr-databases
   - rmarkdown-formats
+  - dplyr-databases
   - ggplot2-exts
+  - googlesheets
   - learning-more
 
 # Not used

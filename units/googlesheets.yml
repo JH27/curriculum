@@ -3,53 +3,61 @@ theme: wrangle
 needs: parse-basics
 readings: ~
 updated: ~
-desc: |2
-
-  Use googlesheets by Jenny Bryan to (suprise\!) extract data from
-  googlesheets. Sheets is a surprisingly useful way of collaboratively
-  collecting data (especially with google forms); googlesheets makes it
-  easy to get that data into R and make use of it.
-
-  If you haven’t already, install it:
-
-  ``` r
-  install.packages("googlesheets")
-  ```
-
-  ``` r
-  library(googlesheets)
-  ```
-
-  ## Sheet sources
-
-  Two basic sources of sheets:
-
-  1.  Your sheets
-  2.  Public
-  sheets
-
-  ### Public sheets
-
-  <https://docs.google.com/spreadsheets/d/1twq7WtX5mor07gR8hjZ0bErOEP8iZJFxD6Q3PUSQ-Z8/pubhtml>
-
-  ``` r
-  gs_url("https://docs.google.com/spreadsheets/d/1twq7WtX5mor07gR8hjZ0bErOEP8iZJFxD6Q3PUSQ-Z8/pubhtml")
-  gs_read()
-  ```
-
-  ### Your sheets
-
-  Key challenge is identifying the sheet you want:
-
-  ``` r
-  gs_ls()
-  gs_ls("Gapminder")
-  ```
-
-  This will create a file called `.httr-oauth` in your current directory.
-  NEVER CHECK THIS INTO GIT. (In the RStudio git pane, right-click on it
-  and select ignore, then press OK.)
-
-  ``` r
-  gs_key()
-  ```
+desc: "\nUse the googlesheets package by Jenny Bryan to (suprise!) extract data from
+  Google Sheets. Google Sheets is a surprisingly useful way of collaboratively collecting
+  data (especially with Google forms). googlesheets makes it easy to get that data
+  into R and make use of it.\n\nIf you haven't already, install it:\n\n``` r\ninstall.packages(\"googlesheets\")\n```\n\n```
+  r\n# Libraries\nlibrary(tidyverse)\n```\n\n    ## ── Attaching packages ────────────
+  tidyverse 1.2.1 ──\n\n    ## ✔ ggplot2 2.2.1.9000     ✔ purrr   0.2.4     \n    ##
+  ✔ tibble  1.4.2          ✔ dplyr   0.7.4     \n    ## ✔ tidyr   0.8.0          ✔
+  stringr 1.3.1     \n    ## ✔ readr   1.1.1          ✔ forcats 0.3.0\n\n    ## ──
+  Conflicts ─────────────── tidyverse_conflicts() ──\n    ## ✖ dplyr::filter() masks
+  stats::filter()\n    ## ✖ dplyr::lag()    masks stats::lag()\n    ## ✖ dplyr::vars()
+  \  masks ggplot2::vars()\n\n``` r\nlibrary(googlesheets)\n\n# Parameters\n  # URL
+  for Gapminder example\nurl_gapminder <- \"https://docs.google.com/spreadsheets/d/1BzfL0kZUz1TsI5zxJF1WNF01IxvC67FbOJUiiGMZ_mQ/\"\n```\n\nPublic
+  sheets\n-------------\n\nSome Google Sheets are public, anyone can read them. Take
+  a lot at this [example](https://docs.google.com/spreadsheets/d/1BzfL0kZUz1TsI5zxJF1WNF01IxvC67FbOJUiiGMZ_mQ/)
+  of data from [Gapminder](https://www.gapminder.org/).\n\nEach Google Sheet has a
+  sheet key. This key is needed by googlesheets to work with the Google Sheet. Here's
+  how to get the sheet key from a sheet's URL.\n\n``` r\nsheet_key <- extract_key_from_url(url_gapminder)\n\nsheet_key\n```\n\n
+  \   ## [1] \"1BzfL0kZUz1TsI5zxJF1WNF01IxvC67FbOJUiiGMZ_mQ\"\n\nOnce you have the
+  sheet key, you can use it to create a googlesheets object.\n\n``` r\ngs <- gs_key(sheet_key)\n```\n\n
+  \   ## Worksheets feed constructed with public visibility\n\n``` r\nclass(gs)\n```\n\n
+  \   ## [1] \"googlesheet\" \"list\"\n\nHere's how you can list the worksheets in
+  the Google Sheet.\n\n``` r\ngs_ws_ls(gs)\n```\n\n    ## [1] \"Africa\"   \"Americas\"
+  \"Asia\"     \"Europe\"   \"Oceania\"\n\nHere's how you can read in the Asia worksheet.\n\n```
+  r\nasia <- \n  gs %>% \n  gs_read(ws = \"Asia\")\n```\n\n    ## Accessing worksheet
+  titled 'Asia'.\n\n    ## Parsed with column specification:\n    ## cols(\n    ##
+  \  country = col_character(),\n    ##   continent = col_character(),\n    ##   year
+  = col_integer(),\n    ##   lifeExp = col_double(),\n    ##   pop = col_integer(),\n
+  \   ##   gdpPercap = col_double()\n    ## )\n\n``` r\nasia\n```\n\n    ## # A tibble:
+  396 x 6\n    ##    country     continent  year lifeExp      pop gdpPercap\n    ##
+  \   <chr>       <chr>     <int>   <dbl>    <int>     <dbl>\n    ##  1 Afghanistan
+  Asia       1952    28.8  8425333      779.\n    ##  2 Afghanistan Asia       1957
+  \   30.3  9240934      821.\n    ##  3 Afghanistan Asia       1962    32.0 10267083
+  \     853.\n    ##  4 Afghanistan Asia       1967    34.0 11537966      836.\n    ##
+  \ 5 Afghanistan Asia       1972    36.1 13079460      740.\n    ##  6 Afghanistan
+  Asia       1977    38.4 14880372      786.\n    ##  7 Afghanistan Asia       1982
+  \   39.9 12881816      978.\n    ##  8 Afghanistan Asia       1987    40.8 13867957
+  \     852.\n    ##  9 Afghanistan Asia       1992    41.7 16317921      649.\n    ##
+  10 Afghanistan Asia       1997    41.8 22227415      635.\n    ## # ... with 386
+  more rows\n\nPrivate sheets\n--------------\n\nAccessing private sheets requires
+  you to authenticate to Google. Authentication is done with this command.\n\n```
+  r\n# Give googlesheets permission to access spreadsheet\ngs_auth()\n```\n\nYou will
+  be prompted to log into Google. Once you have done this googlesheets will create
+  a file called `.httr-oauth` in your current directory. **NEVER CHECK THIS INTO GIT
+  OR UPLOAD IT TO GITHUB**. (In the RStudio Git pane, right-click on it and select
+  ignore, then press OK.)\n\nThe `.httr-oauth` file allows you to avoid having to
+  log into Google in the future. The reason you don't upload this to GitHub is that
+  if someone were able to obtain this file, they could use it to access you Google
+  files.\n\nA common problem in using googlesheets is that it cannot find the `.httr-oauth`
+  file. If you are using a project your working directory is often the top level of
+  the project, not the current subfolder. One way to avoid the problem is to simply
+  make a copy of `.httr-oauth` to have one at both the top level and the subfolder.\n\nOnce
+  you are authenticated into Google, your next challenge is to find the sheet key
+  for the Google Sheet you are interested in using. You can use the following so see
+  the sheets you have access to. The list is ordered by when the sheets were most
+  recently modified.\n\n``` r\ngs_ls() %>% View()\n```\n\nOnce you find the sheet,
+  you can copy it can create a variable for the key to place in the parameter section
+  of your code.\n\nFinally, you can read in the code using\n\n``` r\ndf <- \n  gs_key(sheet_key)
+  %>%\n  gs_read()\n```\n"

@@ -348,6 +348,12 @@ title: Theme index
 <tbody>
 <tr>
 <td id='week-10'>10</td>
+  <td colspan="4"></td>
+  <td colspan="4"><a class="communicate" href="rmarkdown-formats.html">R Markdown presentations</a></td>
+  <td colspan="1"></td>
+</tr>
+<tr>
+<td></td>
   <td colspan="1"></td>
   <td colspan="4"><a class="wrangle" href="dplyr-databases.html">dplyr and databases</a></td>
   <td colspan="4"></td>
@@ -355,14 +361,14 @@ title: Theme index
 <tr>
 <td></td>
   <td colspan="4"></td>
-  <td colspan="4"><a class="communicate" href="rmarkdown-formats.html">R Markdown presentations</a></td>
+  <td colspan="4"><a class="communicate" href="ggplot2-exts.html">ggplot2 extensions</a></td>
   <td colspan="1"></td>
 </tr>
 <tr>
 <td></td>
-  <td colspan="4"></td>
-  <td colspan="4"><a class="communicate" href="ggplot2-exts.html">ggplot2 extensions</a></td>
   <td colspan="1"></td>
+  <td colspan="4"><a class="wrangle" href="googlesheets.html">Google sheets</a></td>
+  <td colspan="4"></td>
 </tr>
 <tr>
 <td></td>

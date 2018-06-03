@@ -23,3 +23,6 @@ build up a regular practice of
 * [tidyverse.org](http://tidyverse.org): an up-to-date resource for
   everything tidyverse.
 
+    * [tidyverse.org blog](https://www.tidyverse.org/articles/): articles and
+      descriptions of new packages releases.
+
