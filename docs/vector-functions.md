@@ -11,7 +11,7 @@ title: Vector functions
 Vector functions
 ----------------
 
-It's often easy to create a **scalar function**, that is a function, that takes a length one input and produces a length one output. You can always apply a scalar function to a vector of values by using the appropriate purrr `map_` function, but you can often find a more efficient approach by relying on an existing vectorized function. It's also easy to accidentally use a vectorized function as if it's a scalar function; doing so makes life harder for yourself than it needs to be. This reading illustrates each problem with an example.
+It's often easy to create a **scalar function**, that is a function, that takes a length-one input and produces a length-one output. You can always apply a scalar function to a vector of values by using the appropriate purrr `map_` function, but you can often find a more efficient approach by relying on an existing vectorized function. It's also easy to accidentally use a vectorized function as if it's a scalar function; doing so makes life harder for yourself than it needs to be. This reading illustrates each problem with an example.
 
 Letter grades
 -------------
@@ -90,7 +90,7 @@ df %>%
 #> # ... with 5 more rows
 ```
 
-However, there is often an alternative, more elegant approach by relying on an existing vector function. For example, you can always rewrite a set of nested if-else statements to use `case_when()`:
+However, there is often an alternative, more elegant, approach by relying on an existing vector function. For example, you can always rewrite a set of nested if-else statements to use `case_when()`:
 
 ``` r
 grade_2 <- function(x) {

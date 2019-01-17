@@ -4,9 +4,9 @@ needs: manip-basics
 readings: ~
 updated: ~
 desc: "\nVector functions\n----------------\n\nIt's often easy to create a **scalar
-  function**, that is a function, that takes a length one input and produces a length
-  one output. You can always apply a scalar function to a vector of values by using
-  the appropriate purrr `map_` function, but you can often find a more efficient approach
+  function**, that is a function, that takes a length-one input and produces a length-one
+  output. You can always apply a scalar function to a vector of values by using the
+  appropriate purrr `map_` function, but you can often find a more efficient approach
   by relying on an existing vectorized function. It's also easy to accidentally use
   a vectorized function as if it's a scalar function; doing so makes life harder for
   yourself than it needs to be. This reading illustrates each problem with an example.\n\nLetter
@@ -33,7 +33,7 @@ desc: "\nVector functions\n----------------\n\nIt's often easy to create a **sca
   = map_chr(score, grade_1))\n#> # A tibble: 10 x 2\n#>   score grade\n#>   <int>
   <chr>\n#> 1    17 F    \n#> 2    97 A    \n#> 3    76 C    \n#> 4    87 B    \n#>
   5    51 F    \n#> # ... with 5 more rows\n```\n\nHowever, there is often an alternative,
-  more elegant approach by relying on an existing vector function. For example, you
+  more elegant, approach by relying on an existing vector function. For example, you
   can always rewrite a set of nested if-else statements to use `case_when()`:\n\n```
   r\ngrade_2 <- function(x) {\n  case_when(\n    x >= 90 ~ \"A\",\n    x >= 80 ~ \"B\",\n
   \   x >= 70 ~ \"C\",\n    x >= 60 ~ \"D\",\n    TRUE    ~ \"F\"\n  )\n}\n\ngrade_2(seq(0,

@@ -108,7 +108,7 @@ Accessing private sheets requires you to authenticate to Google. Authentication 
 gs_auth()
 ```
 
-You will be prompted to log into Google. Once you have done this, googlesheets will create a file called `.httr-oauth` in your current directory. **NEVER CHECK THIS INTO GIT OR UPLOAD IT TO GITHUB**. (In the RStudio Git pane, right-click on it and select ignore, then press OK.)
+You will be prompted to log into Google. Once you have done this, googlesheets will create a file called `.httr-oauth` in your current directory. **NEVER CHECK THIS INTO GIT OR UPLOAD IT TO GITHUB**. (RStudio should create a `.gitignore` file to prevent `.httr-oauth` from being checked into Git or uploaded to GitHub.)
 
 The `.httr-oauth` file allows you to avoid having to log into Google in the future. The reason you don't upload this to GitHub is that if someone were able to obtain this file, they could use it to access your Google files.
 
